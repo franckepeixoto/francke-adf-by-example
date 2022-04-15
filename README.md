@@ -1,11 +1,10 @@
 
-# Azure Data - Peixoto  
+# Azure Data Factory - Francke Peixoto  
 ![](https://community.chocolatey.org/content/packageimages/azuredatafactorytools15.0.9.3527.2.png)
 
 Diário de bordo para quem quer entender os principais aspectos do uso da plataforma *Azure Data Factory**
 
---
-
+---
 O ADF é um serviço nativo da nuvem para gerenciar workloads na integração de dados em lote.
 
 # Termos/Conceitos chave
@@ -33,8 +32,7 @@ Ele identifica os usuários do Azure e permite que eles tenham acesso aos servi�
 # ADF & Git
 > O ADF possui um forte acoplamento ao Git. Uma sessão do ADF não possui armazenamento permanete próprio, portanto, as alterações são salvas diretamente no seu repositório Git.
 **Cada Save** que você **faz** no ADF é um **Git commit** que é imediatamente enviado para o seu repositório hosperado.
-
---
+---
 ## Notas
 > **Apache Parquet**: È um formato de armazenamento de dados estruturados compactados e orientado a colunas. 
 Os aplicativos de Análise que processam um grnade volume de linhas se beneficiam de um formato orientado a colunas, pois dados em colunas fora do escopo da analise não precisam ser lidos.
@@ -60,12 +58,11 @@ Você também pode levantar e mudar os pacotes SSIS existentes para o Azure e ex
 O SSIS Integration Runtime oferece um serviço totalmente gerenciado, para que você não precise se preocupar com o gerenciamento de infraestrutura. 
 [Documentação do Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/).
 
-Instância em curso: 
-- [ADF Peixoto](https://adf.azure.com/en/management/git?factory=%2Fsubscriptions%2F2742a844-c92a-4c98-bf5c-6cf5513f1405%2FresourceGroups%2Ffrancke-rg%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2FADFPeixoto)
-
-
-
---
-
+Instâncias em curso: 
+- [ADF Peixoto](https--//obfuscated--url-)
+- [ADF Fundos Imobiliários & SmallCaps Bovespa](https--//obfuscated--url--)
+- [ADF Kaggle](https--//obfuscated--url--)
+- [ADF WIPO](https--//obfuscated--url--)
+---
 **Apress Source Code**
 [*Azure Data Factory by Example*](https://www.apress.com/9781484270288) by Richard Swinbank (Apress, 2021).
