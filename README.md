@@ -2,7 +2,7 @@
 # Azure Data Factory - Francke Peixoto  
 ![](https://community.chocolatey.org/content/packageimages/azuredatafactorytools15.0.9.3527.2.png)
 
-Diário de bordo para quem quer entender os principais aspectos do uso da plataforma *Azure Data Factory**
+Diário de bordo para quem quer entender os principais aspectos do uso da plataforma **Azure Data Factory**
 
 ---
 O ADF é um serviço nativo da nuvem para gerenciar workloads na integração de dados em lote.
