@@ -60,6 +60,10 @@ Uma expressão de espaço  reservado fica contida entre  chaves **{ }** e preced
 >> * Uma expressão é valida somente em Runtime do pipeline para determinar um valor.
 >> * O tipo de dados de uma expressão é string,int,float,bool,array ou dictionary
 
+> **Parâmetros Globais**: Geralmente usado para valores de origem constante e que devem ser compartilhados por todos os pipelines. Os parâmetros globais são referidos em expressões, dentro do escopo das atividades de pipeline.
+*Ex: pipeline().globalParameters.NomeParametro*
+
+---
 O Azure Data Factory é o serviço ETL de nuvem do Azure para integração de dados sem servidor e transformação de dados em expansão. 
 Ele oferece uma interface do usuário sem código para criação intuitiva e monitoramento e gerenciamento de painel único. 
 Você também pode levantar e mudar os pacotes SSIS existentes para o Azure e executá-los com total compatibilidade no ADF. 
