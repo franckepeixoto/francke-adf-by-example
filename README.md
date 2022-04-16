@@ -52,6 +52,14 @@ O grau de paralelismo realmente usado em tempo de execução aparece no campo **
  O número máximo de **threads** usadas durante a execução de uma atividade é seu grau de paralelismo; o número pode ser definido manualmente para a tividade mas isso não é recomendado.
 >> *Esse tipo de comportamento de dimensionamento automático é uma vantagem importante quando usamos serviços do tipo serverless.*
 
+> **Infix Operators**: A expression language do ADF não contém infix ops - todas as operações são implementadas como funções. Da mesma forma que você usa **concat('xp','to')** em vez de **'xp' + 'to'**, todas as operações matemáticas são invocadas via funções.
+Ex: *Para calcular 4+4, você deve usar a função add, como add(4,4)*
+> **String Interpolation**: Uma string interpolada é um valor de string que contém expressões de espaço reservado que são availiados em tempo de execução. 
+Uma expressão de espaço  reservado fica contida entre  chaves **{ }** e precedida por **@**, resultando em **@{ sua_expressao }**
+- *No Expression builder: @concat('pipeline: ', @{pipeline().Pipeline}) pode ser substituido por:  pipeline: @{pipeline().Pipeline}}*
+>> * Uma expressão é valida somente em Runtime do pipeline para determinar um valor.
+>> * O tipo de dados de uma expressão é string,int,float,bool,array ou dictionary
+
 O Azure Data Factory é o serviço ETL de nuvem do Azure para integração de dados sem servidor e transformação de dados em expansão. 
 Ele oferece uma interface do usuário sem código para criação intuitiva e monitoramento e gerenciamento de painel único. 
 Você também pode levantar e mudar os pacotes SSIS existentes para o Azure e executá-los com total compatibilidade no ADF. 
