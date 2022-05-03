@@ -63,6 +63,30 @@ Uma expressão de espaço  reservado fica contida entre  chaves **{ }** e preced
 > **Parâmetros Globais**: Geralmente usado para valores de origem constante e que devem ser compartilhados por todos os pipelines. Os parâmetros globais são referidos em expressões, dentro do escopo das atividades de pipeline.
 *Ex: pipeline().globalParameters.NomeParametro*
 
+> **Paralelismo**: Por default, as execuções da atividade  ForEach ocorrem em paralelo, exigindo cuidado par agarantir que as atividades de **iterações simultâneas** não inerfiram umas nas outras.
+Neste cenário, a alteração de váriaveis deve ser evitada, mas a atividades **Execute Pipeline** fornece uma maneira fácil de isolar iterações.
+*O ADF executa iterações  ForEach sequencialmente no modo  DEBUG, isso acaba complicando a detecção de falhas de paralelismo no momento do desenvolvimento.* 
+---
+### Data Flow
+Os data flows fornecem uma rota lowcode para o poder do Azure Databricks. Eles são implementados usando um editor visual e convertidos automaticamente pelo adf em codigo Scala para execução em um cluster **Databricks** gerenciado.
+Isso mesmo: *Embora acionado a partir de uma activity de pipeline, a executção dos data flows ocorrem em um cluster*
+Um cluster deve ser provisionado antes que um fluxo de dados possa ser executado. 
+O provisionamento de um cluster leva alguns minutos portanto, sua primeira tarefa ao desenvolver um data flow é **Ativar um cluster para Debug**
+
+---
+### Integration Runtimes - IR
+Razões que pode te fazer querer criar seu própprio IR ao inves de usar o IR padrão são:
+> * Controle do TTL para a execução de um cluster do Databricks.
+> * Você precisa garantir que a movimentção de dados ocorra dentro de uma area geografica especifica.
+
+---
+### Deploy 
+Em um deploy no ADF, o ideal é que seus resources sejam implantados no branch colaboarivo (dev); Essa abordagem se faz relevante pois ao clicar em Publish em sua instância de desenvolvimento, seu modelo ARM é gerado e armazenado no branch **adf_publish** do repositório.
+_(Os modelos ARMs podem ser exportados de forma manual, no entanto é menos produtivo.)_
+> * **Azure Resource Manager (ARM)** : Um modelo ARM é um arquivo JSON que define os compornentes de uma solução, por exemplo, o conteúdo de uma instância do Azure Data Factory.
+> * **Publish**: ao exevutar um pipelne independetemente da insteface do ADF, ele deve ser implanetado em um ambiente; Os pipilenes publicados são executados usando triggers e suas execuções podem ser acompanhadas na Blade Monitor.
+> * **adf_publish**: É o branch nomeado no repositório que contêm os modelos ARM produzido. 
+
 ---
 O Azure Data Factory é o serviço ETL de nuvem do Azure para integração de dados sem servidor e transformação de dados em expansão. 
 Ele oferece uma interface do usuário sem código para criação intuitiva e monitoramento e gerenciamento de painel único. 
